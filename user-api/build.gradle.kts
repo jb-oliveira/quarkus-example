@@ -1,6 +1,8 @@
 plugins {
     java
     id("io.quarkus")
+    kotlin("jvm") version "1.9.0"
+    kotlin("plugin.allopen") version "1.9.0"
 }
 
 repositories {
@@ -31,6 +33,12 @@ version = "1.0.0-SNAPSHOT"
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+allOpen {
+    annotation("jakarta.ws.rs.Path")
+    annotation("jakarta.enterprise.context.ApplicationScoped")
+    annotation("io.quarkus.test.junit.QuarkusTest")
 }
 
 tasks.withType<Test> {
