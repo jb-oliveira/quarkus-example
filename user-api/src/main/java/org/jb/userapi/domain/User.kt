@@ -7,6 +7,7 @@ import java.util.*
 
 
 @Entity
+@Table(name = "users")
 class User {
 
     @Id
