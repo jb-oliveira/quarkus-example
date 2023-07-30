@@ -1,8 +1,8 @@
-package org.jb.userapi.infra
+package org.jb.userapi.infra.repositories
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheRepository
 import jakarta.enterprise.context.ApplicationScoped
-import org.jb.userapi.application.repository.UserRepository
+import org.jb.userapi.application.repositories.UserRepository
 import org.jb.userapi.domain.User
 
 @ApplicationScoped
