@@ -1,4 +1,4 @@
-package org.jb.userapi.application.repository
+package org.jb.userapi.application.repositories
 
 import org.jb.userapi.domain.User
 

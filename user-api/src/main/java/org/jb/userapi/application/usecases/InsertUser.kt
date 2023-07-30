@@ -1,8 +1,8 @@
-package org.jb.userapi.application.usecase
+package org.jb.userapi.application.usecases
 
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
-import org.jb.userapi.application.repository.UserRepository
+import org.jb.userapi.application.repositories.UserRepository
 import org.jb.userapi.domain.User
 
 
