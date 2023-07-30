@@ -1,10 +1,12 @@
 package org.jb.userapi.domain
 
-class Cpf {
-    lateinit var value: String;
+import jakarta.persistence.Embeddable
 
-    fun validate(cpf: String): Boolean {
-        val cpfOnlyDigits = cpf.replace("[^0-9]".toRegex(), "")
+@Embeddable
+data class Cpf(var value: String) {
+
+    fun validate(): Boolean {
+        val cpfOnlyDigits = value.replace("[^0-9]".toRegex(), "")
         if (cpfOnlyDigits.length != 11) {
             return false
         }
