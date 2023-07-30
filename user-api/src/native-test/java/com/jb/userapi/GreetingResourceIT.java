@@ -1,4 +1,4 @@
-package org.jb.userapi;
+package com.jb.userapi;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
