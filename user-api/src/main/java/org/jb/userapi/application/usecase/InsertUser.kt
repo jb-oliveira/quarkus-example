@@ -11,6 +11,7 @@ class InsertUser {
     @Inject
     lateinit var repository: UserRepository
     fun execute(input: User): User {
+        input.validate()
         repository.insert(input)
         return input
     }
