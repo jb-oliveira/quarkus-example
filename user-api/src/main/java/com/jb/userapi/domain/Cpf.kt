@@ -1,4 +1,4 @@
-package org.jb.userapi.domain
+package com.jb.userapi.domain
 
 import jakarta.persistence.Embeddable
 

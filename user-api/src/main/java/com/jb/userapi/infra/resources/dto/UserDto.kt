@@ -1,10 +1,10 @@
-package org.jb.userapi.infra.resources.dto
+package com.jb.userapi.infra.resources.dto
 
 import jakarta.persistence.*
-import org.jb.userapi.domain.Address
-import org.jb.userapi.domain.Cpf
-import org.jb.userapi.domain.User
-import org.jb.userapi.domain.UserStatus
+import com.jb.userapi.domain.Address
+import com.jb.userapi.domain.Cpf
+import com.jb.userapi.domain.User
+import com.jb.userapi.domain.UserStatus
 import java.time.LocalDate
 import java.util.*
 

@@ -1,4 +1,4 @@
-package org.jb.userapi;
+package com.jb.userapi;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
