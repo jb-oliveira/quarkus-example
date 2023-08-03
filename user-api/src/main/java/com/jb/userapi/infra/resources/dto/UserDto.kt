@@ -1,6 +1,5 @@
 package com.jb.userapi.infra.resources.dto
 
-import jakarta.persistence.*
 import com.jb.userapi.domain.Address
 import com.jb.userapi.domain.Cpf
 import com.jb.userapi.domain.User
