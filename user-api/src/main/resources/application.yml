@@ -6,4 +6,4 @@ quarkus:
     path: /openapi        # Optional: Customize the JSON endpoint for the OpenAPI specification
   datasource:
     devservices:
-      port: 32771
+      port: 5432

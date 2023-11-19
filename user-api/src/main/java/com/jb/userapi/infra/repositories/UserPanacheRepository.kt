@@ -10,4 +10,10 @@ class UserPanacheRepository : PanacheRepository<User>, UserRepository {
     override fun insert(input: User) {
         persist(input)
     }
+
+    override fun list(): List<User> {
+        return findAll().list()
+    }
+
+
 }
