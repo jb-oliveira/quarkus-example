@@ -3,10 +3,13 @@ package com.jb.userapi.domain
 import jakarta.persistence.Embeddable
 
 @Embeddable
-data class Cpf(var value: String) {
+data class Cpf(
+    var value: String? = null
+) {
+
 
     fun validate(): Boolean {
-        val cpfOnlyDigits = value.replace("[^0-9]".toRegex(), "")
+        val cpfOnlyDigits = value!!.replace("[^0-9]".toRegex(), "")
         if (cpfOnlyDigits.length != 11) {
             return false
         }

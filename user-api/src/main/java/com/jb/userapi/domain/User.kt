@@ -11,29 +11,29 @@ data class User(
     @Id
     @Column(name = "usr_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    var id: UUID,
+    var id: UUID? =  null,
 
     @Column(name = "usr_name", nullable = false, length = 200)
-    var name: String,
+    var name: String? = null,
 
     @Column(name = "usr_birth", nullable = false)
-    var birth: LocalDate,
+    var birth: LocalDate? = null,
 
     @Column(name = "usr_login", nullable = false, length = 50, unique = true)
-    var login: String,
+    var login: String? = null,
 
     @Column(name = "usr_password", nullable = false, length = 255)
-    var password: String,
+    var password: String? = null,
 
     @Column(name = "usr_status", nullable = false)
     @Enumerated(EnumType.ORDINAL)
-    var status: UserStatus,
+    var status: UserStatus? = null,
 
     @Embedded
     @AttributeOverrides(
         value = [AttributeOverride(name = "value", column = Column(name = "usr_cpf", nullable = false, length = 11))]
     )
-    var cpf: Cpf,
+    var cpf: Cpf? = null,
 
     @Embedded
     @AttributeOverrides(
@@ -44,10 +44,10 @@ data class User(
             AttributeOverride(name = "zip", column = Column(name = "user_zip", nullable = false, length = 10))
         ]
     )
-    var address: Address,
+    var address: Address? = null,
 ) {
     fun validate() {
-        if (!cpf.validate()) throw IllegalArgumentException("Invalid CPF!")
+        if (!cpf!!.validate()) throw IllegalArgumentException("Invalid CPF!")
     }
 
 }

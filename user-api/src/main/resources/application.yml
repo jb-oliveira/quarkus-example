@@ -1,9 +1,14 @@
 quarkus:
+  devservices:
+    enabled: false
   smallrye-openapi:
     enable: true
     ui:
       path: /swagger-ui   # Optional: Customize the endpoint for the Swagger UI
     path: /openapi        # Optional: Customize the JSON endpoint for the OpenAPI specification
   datasource:
-    devservices:
-      port: 5432
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/user_db
+    db-kind: postgresql
+    username: myuser
+    password: mypassword

@@ -11,18 +11,18 @@ import java.util.*
 
 @Serializable
 data class UserDto(
-    var id: String,
-    var name: String,
+    var id: String? = null,
+    var name: String? = null,
     @Serializable(with = LocalDateSerializer::class)
-    var birth: LocalDate,
-    var login: String,
-    var password: String,
-    var status: String,
-    var cpf: String,
-    var street: String,
-    var city: String,
-    var state: String,
-    var zip: String
+    var birth: LocalDate? = null,
+    var login: String? = null,
+    var password: String? = null,
+    var status: String? = null,
+    var cpf: String? = null,
+    var street: String? = null,
+    var city: String? = null,
+    var state: String? = null,
+    var zip: String? = null
 
 ) {
     constructor(user: User) : this(
@@ -31,24 +31,25 @@ data class UserDto(
         user.birth,
         user.login,
         user.password,
-        user.status.name,
-        user.cpf.value,
-        user.address.street,
-        user.address.city,
-        user.address.state,
-        user.address.zip,
+        user.status!!.name,
+        user.cpf!!.value,
+        user.address!!.street,
+        user.address!!.city,
+        user.address!!.state,
+        user.address!!.zip,
     )
+
 
     fun toUser(): User {
         return User(
-            UUID.fromString(id),
-            name,
-            birth,
-            login,
-            password,
-            UserStatus.fromString(status),
-            Cpf(cpf),
-            Address(street, city, state, zip)
+            null,
+            name.toString(),
+            LocalDateSerializer.toLocalDate(birth.toString()),
+            login.toString(),
+            password.toString(),
+            UserStatus.fromString(status.toString()),
+            Cpf(cpf.toString()),
+            Address(street.toString(), city.toString(), state.toString(), zip.toString())
         )
     }
 }

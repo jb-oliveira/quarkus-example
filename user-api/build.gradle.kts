@@ -37,9 +37,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+
 allOpen {
     annotation("jakarta.ws.rs.Path")
     annotation("jakarta.enterprise.context.ApplicationScoped")
+    annotation("jakarta.persistence.Entity")
     annotation("io.quarkus.test.junit.QuarkusTest")
 }
 
@@ -49,4 +51,9 @@ tasks.withType<Test> {
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.compilerArgs.add("-parameters")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlinOptions.javaParameters = true
 }
