@@ -8,7 +8,10 @@ quarkus:
     path: /openapi        # Optional: Customize the JSON endpoint for the OpenAPI specification
   datasource:
     jdbc:
-      url: jdbc:postgresql://localhost:5432/user_db
+      url: jdbc:postgresql://localhost:32770/user_db
     db-kind: postgresql
     username: myuser
     password: mypassword
+  flyway:
+    migrate-at-start: true
+    locations: db/migration
