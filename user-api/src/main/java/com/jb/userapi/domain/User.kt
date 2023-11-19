@@ -38,10 +38,10 @@ data class User(
     @Embedded
     @AttributeOverrides(
         value = [
-            AttributeOverride(name = "street", column = Column(name = "usr_street", nullable = false)),
-            AttributeOverride(name = "city", column = Column(name = "usr_city", nullable = false)),
-            AttributeOverride(name = "state", column = Column(name = "usr_state", nullable = false)),
-            AttributeOverride(name = "zip", column = Column(name = "user_zip", nullable = false, length = 10))
+            AttributeOverride(name = "street", column = Column(name = "usr_street", nullable = false, length = 255)),
+            AttributeOverride(name = "city", column = Column(name = "usr_city", nullable = false, length = 255)),
+            AttributeOverride(name = "state", column = Column(name = "usr_state", nullable = false, length = 2)),
+            AttributeOverride(name = "zip", column = Column(name = "usr_zip", nullable = false, length = 10))
         ]
     )
     var address: Address? = null,
