@@ -25,6 +25,7 @@ class UserResource {
 
     @POST
     fun insertUser(input: UserDto): Response {
+        println("Passou")
         val result = insertUser.execute(input.toUser())
         return Response.ok(UserDto(result)).status(Response.Status.CREATED).build()
     }

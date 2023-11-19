@@ -1,6 +1,6 @@
 package com.jb.userapi.infra.resources.serialization
 
-import kotlinx.serialization.*
+import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
@@ -20,5 +20,9 @@ object LocalDateSerializer : KSerializer<LocalDate> {
 
     override fun deserialize(decoder: Decoder): LocalDate {
         return LocalDate.parse(decoder.decodeString(), formatter)
+    }
+
+    fun toLocalDate(value: String): LocalDate {
+        return LocalDate.parse(value, formatter)
     }
 }
