@@ -17,7 +17,7 @@ class InsertUser {
     @Transactional
     fun execute(input: User): User {
         input.validate()
-        input.password = passwordManager.hashPassword(input.password);
+        input.password = passwordManager.hashPassword(input.password)
         repository.insert(input)
         return input
     }

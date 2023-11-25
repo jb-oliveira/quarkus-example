@@ -1,9 +1,6 @@
 package com.jb.userapi.infra.resources.dto
 
-import com.jb.userapi.domain.Address
-import com.jb.userapi.domain.Cpf
 import com.jb.userapi.domain.User
-import com.jb.userapi.domain.UserStatus
 import com.jb.userapi.infra.resources.serialization.LocalDateSerializer
 import kotlinx.serialization.Serializable
 import java.time.LocalDate

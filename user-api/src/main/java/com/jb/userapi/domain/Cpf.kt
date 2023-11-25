@@ -9,7 +9,7 @@ data class Cpf(
 
 
     fun validate(): Boolean {
-        val cpfOnlyDigits = value!!.replace("[^0-9]".toRegex(), "")
+        val cpfOnlyDigits = value.replace("[^0-9]".toRegex(), "")
         if (cpfOnlyDigits.length != 11) {
             return false
         }
