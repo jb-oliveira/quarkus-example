@@ -9,5 +9,5 @@ CREATE TABLE users (
     usr_street VARCHAR(255) NOT NULL,
     usr_city VARCHAR(255) NOT NULL,
     usr_state VARCHAR(2) NOT NULL,
-    usr_zip VARCHAR(10) NOT NULL
+    usr_zip VARCHAR(10)
 );
