@@ -4,7 +4,7 @@ import jakarta.persistence.Embeddable
 
 @Embeddable
 data class Cpf(
-    var value: String? = null
+    var value: String
 ) {
 
 

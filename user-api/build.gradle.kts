@@ -4,6 +4,8 @@ plugins {
     kotlin("jvm") version "1.9.0"
     kotlin("plugin.allopen") version "1.9.0"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.20"
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.9.20"
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.9.20"
 }
 
 repositories {
@@ -27,6 +29,7 @@ dependencies {
     implementation("io.quarkus:quarkus-config-yaml")
     implementation("io.quarkus:quarkus-flyway")
 
+
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
 }
@@ -39,6 +42,9 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+noArg {
+    annotation("com.jb.userapi.infra.resources.dto.DefaultConstructor")
+}
 
 allOpen {
     annotation("jakarta.ws.rs.Path")

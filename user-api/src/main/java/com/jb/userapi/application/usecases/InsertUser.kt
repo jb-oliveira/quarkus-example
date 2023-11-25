@@ -11,10 +11,13 @@ import jakarta.transaction.Transactional
 class InsertUser {
     @Inject
     lateinit var repository: UserRepository
+    @Inject
+    lateinit var passwordManager: PasswordManager
 
     @Transactional
     fun execute(input: User): User {
         input.validate()
+        input.password = passwordManager.hashPassword(input.password);
         repository.insert(input)
         return input
     }
