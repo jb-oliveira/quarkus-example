@@ -1,4 +1,4 @@
 # Quarkus e-commerce
-E-Commerce sample using quarkus
+Sample using quarkus
 
 
